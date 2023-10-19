@@ -75,13 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'servbdd.iutlan.etu.univ-rennes1.fr',
-	'port' => '5433' ,
-	'username' => '',
+	'hostname' => 'localhost',
+	'username' => 'root',
 	'password' => '',
-	'database' => '',
-	'dbdriver' => 'postgre',
-	'dbprefix' => '',
+	'database' => 'dicathlon',
+	'dbdriver' => 'mysqli',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
