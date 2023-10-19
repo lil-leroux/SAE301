@@ -75,11 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'dicathlon',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'servbdd.iutlan.etu.univ-rennes1.fr',
+	'port' => '5433' ,
+	'username' => 'jflatres',
+	'password' => 'Anekarsa29',
+	'database' => 'pg_jflatres',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
