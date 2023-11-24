@@ -14,6 +14,8 @@ class Staticpages extends CI_Controller
         $this->load->vars($data);
         // Load a generic page
         $this->load->view('template');
+        $this->load->helper('url');
+
 
     }
 
