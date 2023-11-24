@@ -11,6 +11,7 @@ $data['content']='userlist';
 $this->load->vars($data );
 $this->load->view('template');
 
+
 }
 }
 ?>
