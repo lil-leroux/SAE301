@@ -3,9 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model {
 
-    public function construct() {
-        parent::construct();
+    public function __construct() {
+        parent::__construct();
         $this->load->database();
+
     }
 
     public function add_user() {
@@ -31,6 +32,12 @@ class User_model extends CI_Model {
     public function delete_user($user_id) {
         $this->db->where('id', $user_id);
         $this->db->delete('utilisateur');
+    }
+
+    public function check_login($login, $password) {
+        // Vérifier les informations d'identification dans la base de données
+        $query = $this->db->get_where('utilisateur', array('login' => $login, 'password' => $password));
+        return $query->row(); // Retourne un objet utilisateur si les informations d'identification sont correctes, sinon NULL
     }
 
 }

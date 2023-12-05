@@ -136,3 +136,10 @@ $autoload['model'] = array();
 
 $autoload['libraries'] = array('database');
 
+$autoload['libraries'] = array('form_validation');
+
+$autoload['libraries'] = array('session');
+
+
+
+
