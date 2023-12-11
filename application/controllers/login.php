@@ -36,6 +36,23 @@ class Login extends CI_Controller {
     }
 
     
+    public function non_autorise() {
+        // Vérifiez si l'utilisateur est connecté
+        if ($this->session->userdata('user_id')) {
+            // Récupérez les informations nécessaires depuis la session
+            $data['username'] = $this->session->userdata('username'); // Assurez-vous d'avoir 'username' dans votre session
+    
+            // Chargez la vue welcome_view avec les données
+            $this->load->view('login/non_autorise', $data);
+        } else {
+            // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+            redirect('login');
+        }
+    }
+
+
+
+    
     
     public function process_login() {
         // Règles de validation pour le formulaire de connexion
@@ -63,6 +80,8 @@ class Login extends CI_Controller {
                 $data['error'] = 'Login ou mot de passe incorrect.';
                 $this->load->view('login/login_form', $data);
             }
+
+            
         }
     }
 
@@ -71,5 +90,6 @@ class Login extends CI_Controller {
         $this->session->sess_destroy();
         redirect('login'); // Rediriger vers la page de connexion
     }
+
 }
 ?>

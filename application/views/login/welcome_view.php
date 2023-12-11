@@ -7,7 +7,11 @@
 </head>
 <body>
 
+
     <h2>Bienvenue, <?php echo $username; ?> !</h2>
+
+    <a href="<?php echo base_url('index.php/admin/dashboard'); ?>">Admin</a>
+
 
     <a href="<?php echo base_url('index.php/login/logout'); ?>">Déconnexion</a>
 

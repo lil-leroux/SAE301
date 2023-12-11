@@ -40,5 +40,25 @@ class User_model extends CI_Model {
         return $query->row(); // Retourne un objet utilisateur si les informations d'identification sont correctes, sinon NULL
     }
 
+    // Ajoutez une méthode pour récupérer le type d'utilisateur (rôle) d'un utilisateur par son ID
+public function get_user_type($user_id) {
+    $query = $this->db->select('type_utilisateur')->get_where('utilisateur', array('id' => $user_id));
+    $result = $query->row();
+    return ($result) ? $result->type_utilisateur : null;
+}
+
+public function is_admin($user_id) {
+    $this->db->select('type_utilisateur');
+    $this->db->where('id', $user_id);
+    $query = $this->db->get('utilisateur');
+
+    if ($query->num_rows() > 0) {
+        $user = $query->row();
+        return $user->type_utilisateur === 'admin';
+    }
+
+    return false;
+}
+
 }
 ?>
