@@ -29,6 +29,18 @@ class Product_model extends CI_Model {
     public function delete_product($product_id) {
         $this->db->where('id', $product_id);
         return $this->db->delete('produit');
+    } 
+
+    
+    
+    public function getProduitById($id_produit) {
+        // Récupérer les détails du produit depuis la base de données
+        $this->db->where('id', $id_produit);
+        $query = $this->db->get('produit');
+
+        // Retourner les données du produit sous forme de tableau associatif
+        return $query->row_array();
     }
+
 }
 ?>

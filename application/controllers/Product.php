@@ -38,9 +38,35 @@ class Product extends CI_Controller {
         $this->load->view('product/productlist', $data);
     }
 
+    public function boutique() {
+        // Charger le modèle associé à la table 'produit'
+        $this->load->model('Product_model');
+
+        // Appel à la méthode du modèle pour récupérer tous les produits
+        $data['produits'] = $this->Product_model->get_products();
+
+        // Passer les données récupérées à la vue boutique
+        $this->load->view('product/boutique', $data);
+    }
+
+
     public function delete_product($product_id) {
         $this->Product_model->delete_product($product_id);
         redirect('product/productlist');
     }
+    public function listproductonboutique() {
+        $data['products'] = $this->Product_model->get_products();
+        $this->load->model('Product_model', $data);
+    }
+    public function afficherProduit($id_produit) {
+        // Charger le modèle associé à la table 'produit'
+        $this->load->model('Product_model');
+
+        // Appel à la méthode du modèle pour récupérer les détails du produit
+        $data['produit'] = $this->Produit_model->getProduitById($id_produit);
+
+        
+    }
+
 }
 ?>
