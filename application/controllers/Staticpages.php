@@ -13,7 +13,7 @@ class Staticpages extends CI_Controller
         // $data is 'extracted ' and its compenents has a global access
         $this->load->vars($data);
         // Load a generic page
-        $this->load->view('template');
+        $this->load->view('accueil');
         $this->load->helper('url');
 
 
