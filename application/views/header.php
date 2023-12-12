@@ -10,13 +10,13 @@
 
 <header>
     <nav>
-        <div><img class="logo" src="<?php echo base_url('img/Rectangle 367.png'); ?>" alt="Mon Image">
-        </div>
+        <a href="<?php echo base_url('index.php/'); ?>"><img class="logo" src="<?php echo base_url('img/Rectangle 367.png'); ?>" alt="Mon Image"></a>
+        
         <div class="search-bar">
             <input type="text" placeholder="Recherche...">
             <button>OK</button>
         </div>
-        <a class="user-options">
+        <a class="user-options" href="<?php echo base_url('index.php/login'); ?>">
             <img src="<?php echo base_url('img/mes réservations.png'); ?>" alt="Mon Image">
             Mes reservations
         </a>

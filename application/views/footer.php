@@ -56,7 +56,7 @@
             </div>
 
             <div class="footer_droite">
-                <div>© 2023 Colin LALLARUET & Lilian LEROUX.
+                <div>© 2023 Joan Flatres & Lilian Le Roux & Owen Le Morvan
                     <br>
                     All rights reserved
                 </div>
