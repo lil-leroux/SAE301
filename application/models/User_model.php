@@ -60,5 +60,21 @@ public function is_admin($user_id) {
     return false;
 }
 
+public function updateUser($login, $nouveau_nom, $nouveau_prenom, $nouvelle_ddn, $nouvel_email, $nouveau_mdp) {
+    $data = array(
+        'nom' => $nouveau_nom,
+        'prenom' => $nouveau_prenom,
+        'ddn' => $nouvelle_ddn,
+        'email' => $nouvel_email,
+        'password' => $nouveau_mdp
+    );
+
+    $this->db->where('login', $login);
+    $this->db->update('utilisateur', $data);
+
+    return $this->db->affected_rows() > 0;
+}
+
+
 }
 ?>

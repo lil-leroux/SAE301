@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<?php echo base_url('img/Rectangle 367.png'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
     <title>Supprimer un Utilisateur</title>
 </head>
 <body>
+
+<?php 
+
+$this->load->view('header');
+?>
 
 <h2>Supprimer un Utilisateur</h2>
 
@@ -27,6 +34,8 @@
 <?php } else { ?>
     <p>Utilisateur non trouvé.</p>
 <?php } ?>
+
+<?php $this->load->view('footer'); ?>
 
 </body>
 </html>
