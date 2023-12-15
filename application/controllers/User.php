@@ -44,5 +44,52 @@ class User extends CI_Controller {
         $this->User_model->delete_user($user_id);
         redirect('user/userlist');
     }
+
+
+    public function updateUser() {
+        // Charger la bibliothèque de validation de formulaire
+        $this->load->library('form_validation');
+
+        // Définir les règles de validation
+        $this->form_validation->set_rules('login', 'Login', 'required');
+        $this->form_validation->set_rules('nouveau_nom', 'Nouveau Nom', 'required');
+        $this->form_validation->set_rules('nouveau_prenom', 'Nouveau Prénom', 'required');
+        $this->form_validation->set_rules('nouveau_mdp', 'Nouveau Mot de Passe', 'required');
+        $this->form_validation->set_rules('nouvel_email', 'Nouvel Email', 'required');
+        $this->form_validation->set_rules('nouvelle_ddn', 'Nouvelle Ddn', 'required');
+
+
+
+        // Ajoutez d'autres règles de validation selon vos besoins
+
+        if ($this->form_validation->run() == FALSE) {
+            // Les règles de validation n'ont pas été respectées, renvoyer à la vue avec les erreurs
+            $this->load->view('profil/update_user_view');
+        } else {
+            // Récupérer les données du formulaire
+            $login = $this->input->post('login');
+            $nouveau_nom = $this->input->post('nouveau_nom');
+            $nouveau_prenom = $this->input->post('nouveau_prenom');
+            $nouvelle_ddn = $this->input->post('nouvelle_ddn');
+            $nouvel_email = $this->input->post('nouvel_email');
+            $nouveau_mdp = $this->input->post('nouveau_mdp');
+
+            // Récupérez d'autres données du formulaire selon vos besoins
+
+            // Appeler la méthode de mise à jour dans le modèle
+            $result = $this->User_model->updateUser($login, $nouveau_nom, $nouveau_prenom, $nouvelle_ddn, $nouvel_email, $nouveau_mdp);
+
+            
+            if ($result) {
+                // Mise à jour réussie, rediriger ou afficher un message de succès
+                redirect('success_page');
+            } else {
+                // Échec de la mise à jour, rediriger ou afficher un message d'erreur
+                redirect('error_page');
+            }
+        }
+    }
+
 }
+
 ?>
