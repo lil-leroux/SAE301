@@ -28,7 +28,7 @@
             <img src="<?php echo base_url('img/connexion.png'); ?>" alt="Mon Image">
             Connexion
         </a>
-        <a class="user-options" class="inscription" href="<?php echo base_url('index.php/login'); ?>">
+        <a class="user-options" class="inscription" href="<?php echo base_url('index.php/authentification/register'); ?>">
             <img src="<?php echo base_url('img/inscription.png'); ?>" alt="Mon Image">
             Inscription
         </a>
