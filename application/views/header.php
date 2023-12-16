@@ -16,6 +16,10 @@
             <input type="text" placeholder="Recherche...">
             <button>OK</button>
         </div>
+        <a class="user-options" href="<?php echo base_url('index.php/product/boutique'); ?>">
+            <img src="<?php echo base_url('img/boutique.png'); ?>" alt="Mon Image">
+            Boutiques
+        </a>
         <a class="user-options" href="<?php echo base_url('index.php/login'); ?>">
             <img src="<?php echo base_url('img/mes réservations.png'); ?>" alt="Mon Image">
             Mes reservations
