@@ -75,6 +75,11 @@ public function updateUser($login, $nouveau_nom, $nouveau_prenom, $nouvelle_ddn,
     return $this->db->affected_rows() > 0;
 }
 
+public function insert_user($data) {
+    // Insérer l'utilisateur dans la table "utilisateur"
+    $this->db->insert('utilisateur', $data);
+}
+
 
 }
 ?>
