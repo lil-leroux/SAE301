@@ -27,7 +27,7 @@
                 <div class="footer_titre footer_align footer_none">.</div>
                 <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php'); ?>">Mes reservations</a></div>
                 <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/login'); ?>">Connexion</a></div>
-                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/login'); ?>">Inscription</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/authentification/register'); ?>">Inscription</a></div>
             </div>
 
             <div class="footer_col1">
