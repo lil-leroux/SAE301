@@ -52,7 +52,7 @@
             </div>
 
             <div class="footer_milieu">
-                <div>Réaliser par</div>
+                <div>Réalisé par</div>
             </div>
 
             <div class="footer_droite">

@@ -16,48 +16,10 @@
     // Chargez la barre de navigation
     $this->load->view('header');
     ?>
-    <div class="sectioncarou">
-        <section carrousel>
-
-            <input id="slide-0" name="carrousel" type="radio" checked />
-            <div class="slide">
-                <label for="slide-3" class="back">◀</label><img class="imagecarou" src="<?php echo base_url('img/Sport Fitness in Motion 1.png'); ?>" alt="Mon Image"></img>
-                <div class="slide-content">
-                    
-                    
-                </div>
-                <label for="slide-1" class="forward">▶</label>
-            </div>  
-
-            <input id="slide-1" name="carrousel" type="radio" />
-            <div class="slide">
-                <label for="slide-0" class="back">◀</label>
-                <div class="slide-content">
-                    <h1>One</h1>
-                </div>
-                <label for="slide-2" class="forward">▶</label>
-            </div>
-
-            <input id="slide-2" name="carrousel" type="radio" />
-            <div class="slide">
-                <label for="slide-1" class="back">◀</label>
-                <div class="slide-content">
-                    <h1>Two</h1>
-                </div>
-                <label for="slide-3" class="forward">▶</label>
-            </div>
-
-            <input id="slide-3" name="carrousel" type="radio" />
-            <div class="slide">
-                <label for="slide-2" class="back">◀</label>
-                <div class="slide-content">
-                    <h1>Three</h1>
-                </div>
-                <label for="slide-0" class="forward">▶</label>
-            </div>
-
-        </section>
-    </div>
+    <?php
+    // Chargez la barre de navigation
+    $this->load->view('carrousel');
+    ?>
     <main>
         <section class="featured">
             <h2>Produit du moment</h2>

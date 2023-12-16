@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +8,25 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
     <title>Tableau de bord administrateur</title>
 </head>
+
 <body>
 
-<?php 
+    <?php
+    $this->load->view('header');
+    ?>
 
-$this->load->view('header');
-$this->load->view('footer'); ?>
-
-
-    <h2>Tableau de bord administrateur</h2>
-
- 
-
-    <p>Bienvenue, administrateur!</p>
-
-    <a href="<?php echo base_url('index.php/login/welcome_view'); ?>">Quitter la page administrateur</a>
+    <section class="info_utilisateur">
+        <h2>Tableau de bord administrateur</h2>
 
 
+
+        <p>Bienvenue, administrateur!</p>
+        <div class="info">
+            <a class="bouton" href="<?php echo base_url('index.php/login/welcome_view'); ?>">Quitter la page administrateur</a>
+        </div>
+    </section>
+    
 
 </body>
+<?php $this->load->view('footer'); ?>
 </html>
