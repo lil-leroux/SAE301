@@ -15,18 +15,22 @@
     $this->load->view('header');
     ?>
 
-    <section class="info_utilisateur">
+    <section>
         <h2>Tableau de bord administrateur</h2>
 
 
 
         <p>Bienvenue, administrateur!</p>
         <div class="info">
+            <a class="bouton" href="<?php echo base_url('index.php/user/add'); ?>">Ajouter un utilisateur</a>
             <a class="bouton" href="<?php echo base_url('index.php/login/welcome_view'); ?>">Quitter la page administrateur</a>
+            <a class="bouton" href="<?php echo base_url('index.php/user/userlist'); ?>">Liste des Utilisateurs</a>
         </div>
+       
     </section>
-    
+
 
 </body>
 <?php $this->load->view('footer'); ?>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +8,48 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
     <title>Ajouter un utilisateur</title>
 </head>
+
 <body>
 
-<?php 
+    <?php
 
-$this->load->view('header');
- ?>
+    $this->load->view('header');
+    ?>
+    <section>
+        <h2>Ajouter un utilisateur</h2>
+        <div class="container">
+            <?php echo validation_errors(); ?>
 
-<h2>Ajouter un utilisateur</h2>
+            <?php echo form_open('user/add'); ?>
 
-<?php echo validation_errors(); ?>
+            <label for="login">Login:</label>
+            <input type="text" name="login"><br>
 
-<?php echo form_open('user/add'); ?>
+            <label for="password">Password:</label>
+            <input type="password" name="password"><br>
 
-    <label for="login">Login:</label>
-    <input type="text" name="login"><br>
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom"><br>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password"><br>
+            <label for="prenom">Prénom:</label>
+            <input type="text" name="prenom"><br>
 
-    <label for="nom">Nom:</label>
-    <input type="text" name="nom"><br>
+            <label for="ddn">Date de naissance:</label>
+            <input type="date" name="ddn"><br>
 
-    <label for="prenom">Prénom:</label>
-    <input type="text" name="prenom"><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email"><br>
 
-    <label for="ddn">Date de naissance:</label>
-    <input type="date" name="ddn"><br>
+            <label for="type_utilisateur">Type d'utilisateur:</label>
+            <input type="text" name="type_utilisateur"><br>
 
-    <label for="email">Email:</label>
-    <input type="email" name="email"><br>
+            <input type="submit" value="Ajouter">
 
-    <label for="type_utilisateur">Type d'utilisateur:</label>
-    <input type="text" name="type_utilisateur"><br>
-
-    <input type="submit" value="Ajouter">
-
-<?php echo form_close(); ?>
-
-<?php $this->load->view('footer'); ?>
+            <?php echo form_close(); ?>
+        </div>
+    </section>
+    <?php $this->load->view('footer'); ?>
 
 </body>
+
 </html>
