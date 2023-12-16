@@ -20,7 +20,7 @@
             <img src="<?php echo base_url('img/boutique.png'); ?>" alt="Mon Image">
             Boutiques
         </a>
-        <a class="user-options" href="<?php echo base_url('index.php/product/description'); ?>">
+        <a class="user-options" href="<?php echo base_url('index.php'); ?>">
             <img src="<?php echo base_url('img/mes réservations.png'); ?>" alt="Mon Image">
             Mes reservations
         </a>
