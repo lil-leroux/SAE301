@@ -22,5 +22,6 @@
         <!-- Affichage d'autres détails du produit selon les besoins -->
     </div>
     <!-- Autres éléments HTML, scripts JavaScript, etc. -->
+    <?php $this->load->view('footer');?>
 </body>
 </html>
