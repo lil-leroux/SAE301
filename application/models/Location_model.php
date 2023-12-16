@@ -9,7 +9,7 @@ class Product_model extends CI_Model {
     }
 
     public function ajouterLocation($produitId, $utilisateurId, $prixTotal) {
-        // Insérez les données dans la table location 
+    
         $data = array(
             'produit_id' => $produitId,
             'utilisateur_id' => $utilisateurId,
@@ -22,5 +22,10 @@ class Product_model extends CI_Model {
         $query = $this->db->get('location');
         return $query->result();
     }
+
+    public function delete_reservation($produit_id) {
+        $this->db->where('id', $produit_id);
+        return $this->db->delete('location');
+    } 
 }
 ?>
