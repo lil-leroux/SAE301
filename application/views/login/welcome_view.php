@@ -20,7 +20,7 @@
         <div class="info">
 
 
-            <a class="bouton" href="<?php echo base_url('index.php/admin/dashboard'); ?>">Admin</a>
+            <a class="bouton" href="<?php echo base_url('index.php/admin/dashboard'); ?>">Administrateur</a>
 
             <a class="bouton" href="<?php echo base_url('index.php/login/logout'); ?>">Déconnexion</a>
 
