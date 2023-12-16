@@ -28,6 +28,10 @@
             <img src="<?php echo base_url('img/connexion.png'); ?>" alt="Mon Image">
             Connexion
         </a>
+        <a class="user-options" class="inscription" href="<?php echo base_url('index.php/login'); ?>">
+            <img src="<?php echo base_url('img/inscription.png'); ?>" alt="Mon Image">
+            Inscription
+        </a>
     </nav>
 </header>
 </body>
