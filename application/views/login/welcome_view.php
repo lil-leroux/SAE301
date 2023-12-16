@@ -25,6 +25,9 @@
             <a class="bouton" href="<?php echo base_url('index.php/login/logout'); ?>">Déconnexion</a>
 
             <a class="bouton" href="<?php echo base_url('index.php/user/updateUser'); ?>">Profil</a>
+
+            <a class="bouton" href="<?php echo site_url('authentification/delete_account'); ?>">Supprimer mon compte</a>
+
         </div>
     </section>
     <?php

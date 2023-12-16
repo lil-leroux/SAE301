@@ -31,8 +31,12 @@ class User_model extends CI_Model {
 
     public function delete_user($user_id) {
         $this->db->where('id', $user_id);
+     
         $this->db->delete('utilisateur');
+        return $this->db->affected_rows() > 0;
     }
+    
+
 
     public function check_login($login, $password) {
         // Vérifier les informations d'identification dans la base de données
