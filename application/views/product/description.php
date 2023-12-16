@@ -10,7 +10,9 @@
 </head>
 <body>
 <?php $this->load->view('header');
+$id= $_GET['add'];
     ?>
+    
     <h1>Détails du Produit</h1>
     <div>
         <h2><?php echo $produit['type']; ?></h2>

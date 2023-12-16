@@ -24,5 +24,9 @@ class Product extends CI_Controller {
         echo "Vous avez réservé votre article avec succès !";
     }
 
+    public function listreservation() {
+        $data['reservation'] = $this->Location_model->get_reservation();
+        $this->load->model('Location_model', $data);
+    }
 }
 ?>

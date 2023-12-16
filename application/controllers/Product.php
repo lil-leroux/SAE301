@@ -58,12 +58,15 @@ class Product extends CI_Controller {
         $data['products'] = $this->Product_model->get_products();
         $this->load->model('Product_model', $data);
     }
+ 
     public function afficherProduit($id_produit) {
         // Charger le modèle associé à la table 'produit'
         $this->load->model('Product_model');
 
         // Appel à la méthode du modèle pour récupérer les détails du produit
         $data['produit'] = $this->Produit_model->getProduitById($id_produit);
+        // Passer les données récupérées à la vue descritpion
+        $this->load->view('product/description', $data);
 
         
     }

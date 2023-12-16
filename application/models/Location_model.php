@@ -18,6 +18,9 @@ class Product_model extends CI_Model {
 
         $this->db->insert('location', $data);
     }
-
+    public function get_reservation() {
+        $query = $this->db->get('location');
+        return $query->result();
+    }
 }
 ?>
