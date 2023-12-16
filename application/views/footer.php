@@ -12,21 +12,22 @@
     <footer>
         <div class="footer_ligne1">
             <div class="footer_col1">
-                <img class="footer_logo" src="<?php echo base_url('img/decathlon-1-logo 3.png'); ?>">
+                <a href="<?php echo base_url('index.php'); ?>"><img class="footer_logo" src="<?php echo base_url('img/decathlon-1-logo 3.png'); ?>"></a>
                 <div class="footer_texteimp">+33 06 06 06 06 </div>
                 <div class="footer_texteimp">support@Dicathlon.fr</div>
             </div>
 
             <div class="footer_col1">
                 <div class="footer_titre footer_align">Lien rapide</div>
-                <div class="footer_align"><a class="lien_footer" src="<?php echo base_url('index.php/accueil.php'); ?>">Acceuil</a></div>
-                <div class="footer_align"><a class="lien_footer" src="<?php echo base_url('img/decathlon-1-logo 3.png'); ?>">Nos boutiques</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php'); ?>">Acceuil</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/product/boutique'); ?>">Boutique</a></div>
             </div>
 
             <div class="footer_col1">
                 <div class="footer_titre footer_align footer_none">.</div>
-                <div class="footer_align"><a class="lien_footer" src="<?php echo base_url('index.php/login'); ?>">Connexion</a></div>
-                <div class="footer_align"><a class="lien_footer" src="<?php echo base_url('index.php/login'); ?>">Inscription</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php'); ?>">Mes reservations</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/login'); ?>">Connexion</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/login'); ?>">Inscription</a></div>
             </div>
 
             <div class="footer_col1">
