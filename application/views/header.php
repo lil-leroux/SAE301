@@ -20,7 +20,7 @@
             <img src="<?php echo base_url('img/boutique.png'); ?>" alt="Mon Image">
             Boutiques
         </a>
-        <a class="user-options" href="<?php echo base_url('index.php'); ?>">
+        <a class="user-options" href="<?php echo base_url('index.php/product/description'); ?>">
             <img src="<?php echo base_url('img/mes réservations.png'); ?>" alt="Mon Image">
             Mes reservations
         </a>
@@ -28,18 +28,6 @@
             <img src="<?php echo base_url('img/connexion.png'); ?>" alt="Mon Image">
             Connexion
         </a>
-<<<<<<< HEAD
-
-    
-        <a href="<?php echo base_url('index.php/login/welcome_view'); ?>">Mon compte</a>
-      
-
-=======
-        <a class="user-options" class="inscription" href="<?php echo base_url('index.php/login'); ?>">
-            <img src="<?php echo base_url('img/inscription.png'); ?>" alt="Mon Image">
-            Inscription
-        </a>
->>>>>>> 0168cc4eec748501ca20d74de614f1f4d8f36382
     </nav>
 </header>
 </body>

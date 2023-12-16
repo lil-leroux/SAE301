@@ -48,7 +48,6 @@
 
             <input type="submit" value="Update User">
 
-<<<<<<< Updated upstream
             <?php echo form_close(); ?>
         </div>
     </section>
@@ -56,10 +55,6 @@
     // Chargez la barre de navigation
     $this->load->view('footer');
     ?>
-=======
-<a href="<?php echo base_url('index.php/login/welcome_view'); ?>">Retourner à l'accueil</a>
-
->>>>>>> Stashed changes
 </body>
 
 </html>
