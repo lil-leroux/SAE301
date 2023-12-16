@@ -15,9 +15,9 @@
 
 $this->load->view('header');
  ?>
-
+<section>
 <h2>Ajouter un Produit</h2>
-
+<div class="container">
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('product/add'); ?>
@@ -43,7 +43,8 @@ $this->load->view('header');
     <input type="submit" value="Ajouter">
 
 <?php echo form_close(); ?>
-
+</div>
+</section>
 <?php $this->load->view('footer'); ?>
 
 </body>

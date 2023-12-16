@@ -20,11 +20,13 @@
 
 
 
-        <p>Bienvenue, administrateur!</p>
+        <p>Bienvenue, administrateur !</p>
         <div class="info">
             <a class="bouton" href="<?php echo base_url('index.php/user/add'); ?>">Ajouter un utilisateur</a>
+            <a class="bouton" href="<?php echo base_url('index.php/product/add'); ?>">Ajouter un produit</a>
             <a class="bouton" href="<?php echo base_url('index.php/login/welcome_view'); ?>">Quitter la page administrateur</a>
             <a class="bouton" href="<?php echo base_url('index.php/user/userlist'); ?>">Liste des Utilisateurs</a>
+            <a class="bouton" href="<?php echo base_url('index.php/product/productlist'); ?>">Liste des Produits</a>
         </div>
        
     </section>

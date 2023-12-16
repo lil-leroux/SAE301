@@ -14,9 +14,9 @@
 
 $this->load->view('header');
  ?>
-
+<section>
 <h2>Liste des Produits</h2>
-
+<div class="container">
 <?php if (!empty($products)) { ?>
     <table border="1">
         <thead>
@@ -52,7 +52,8 @@ $this->load->view('header');
 <?php } else { ?>
     <p>Aucun produit trouvé.</p>
 <?php } ?>
-
+</div>
+</section>
 <?php $this->load->view('footer'); ?>
 </body>
 </html>
