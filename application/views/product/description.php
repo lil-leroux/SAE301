@@ -44,6 +44,15 @@
         <p><strong>État:</strong> <?php echo $produit['etat']; ?></p>
         <input type="text" name="daterange" value="" />
         
+        <div class="form-group">
+            <label for="startDate">Date de début</label>
+            <input type="text" class="form-control" id="startDate" value="">
+        </div>
+        <div class="form-group">
+            <label for="endDate">Date de fin</label>
+            <input type="text" class="form-control" id="endDate" value="">
+        </div>
+        
         <!-- Affichage d'autres détails du produit selon les besoins -->
     </div>
         <?php
@@ -58,13 +67,17 @@
     // Chargez la barre de navigation
     $this->load->view('footer');
     ?>
-    <script>
+<script>
 $(function() {
-  $('input[name="daterange"]').daterangepicker({
-    opens: 'left'
-  }, function(start, end, label) {
-    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-  });
+    $('input[name="daterange"]').daterangepicker({}, function(start, end, label) {
+        // Mettez à jour la valeur de #startDate avec la date de début
+        $('#startDate').val(start.format('YYYY-MM-DD'));
+        // Mettez à jour la valeur de #endDate avec la date de fin
+        $('#endDate').val(end.format('YYYY-MM-DD'));
+
+        // Affichez également dans la console pour vérification
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+    });
 });
 </script>
 </body>
