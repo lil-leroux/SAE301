@@ -1,20 +1,36 @@
+<!-- description.php -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Détails du Produit</title>
-    <!-- Styles CSS, liens vers les fichiers CSS -->
     <link rel="icon" type="image/png" href="<?php echo base_url('img/Rectangle 367.png'); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/StyleDescrition.css'); ?>">
+    <title>Description du Produit</title>
 </head>
+
 <body>
-<?php $this->load->view('header');
-$id= $_GET['add'];
-    ?>
     
-    <h1>Détails du Produit</h1>
-    <div>
+    <?php
+    $product_id= $_GET['id'];
+    // Chargez la barre de navigation
+    $this->load->view('header');
+    ?>
+
+    <section>
+        <?php
+        // Récupérer l'id du produit à partir des paramètres de requête
+        $product_id = $this->input->get('id');
+
+        // Utilisez l'id pour récupérer les détails du produit depuis la base de données en utilisant le modèle Product_model
+        $produit_details = $this->Product_model->getProduitById($product_id);
+
+        // Vérifiez si les détails du produit existent
+        if ($produit_details) {
+        ?>
+            <h2>Description du Produit</h2>
+            <div class="container">
         <h2><?php echo $produit['type']; ?></h2>
         <p><strong>Description:</strong> <?php echo $produit['description']; ?></p>
         <p><strong>Marque:</strong> <?php echo $produit['marque']; ?></p>
@@ -23,7 +39,18 @@ $id= $_GET['add'];
         <p><strong>État:</strong> <?php echo $produit['etat']; ?></p>
         <!-- Affichage d'autres détails du produit selon les besoins -->
     </div>
-    <!-- Autres éléments HTML, scripts JavaScript, etc. -->
-    <?php $this->load->view('footer');?>
+        <?php
+        } else {
+            // Affichez un message si le produit n'est pas trouvé
+            echo "<p>Produit non trouvé.</p>";
+        }
+        ?>
+    </section>
+
+    <?php
+    // Chargez la barre de navigation
+    $this->load->view('footer');
+    ?>
 </body>
+
 </html>

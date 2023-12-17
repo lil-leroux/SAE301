@@ -41,7 +41,7 @@
                                 <!-- message de participation -->
                                 <p id="fonction-card-deux">Dont 0.02€ d'éco-participation</p>
                                 <!-- bouton d'achat -->
-                                <a href="<?php echo base_url('index.php/product/description?add=' . $produit->id); ?>">
+                                <a href="<?php echo base_url('index.php/product/afficherProduit?id=' . $produit->id); ?>">
 
                                     <svg id="fonction-card-trois" width="120" height="129" viewBox="0 0 120 129" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <g filter="url(#filter0_i_59_422)">

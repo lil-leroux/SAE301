@@ -33,14 +33,15 @@ class Product_model extends CI_Model {
 
     
     
-    public function getProduitById($id_produit) {
+    public function getProduitById($product_id) {
         // Récupérer les détails du produit depuis la base de données
-        $this->db->where('id', $id_produit);
+        $this->db->where('id', $product_id);
         $query = $this->db->get('produit');
 
         // Retourner les données du produit sous forme de tableau associatif
         return $query->row_array();
     }
+
 
 }
 ?>
