@@ -15,7 +15,7 @@ class Authentification extends CI_Controller {
         $this->load->view('register_view');
     }
 
-    public function process_registration() {
+   /* public function process_registration() {
         // Valider le formulaire
         $this->form_validation->set_rules('login', 'Login', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required');
@@ -48,7 +48,60 @@ class Authentification extends CI_Controller {
             // Rediriger vers une page de confirmation ou une autre page appropriée
             redirect('login');
         }
+    }*/
+
+    public function process_registration() {
+        // Valider le formulaire
+        $this->form_validation->set_rules('login', 'Login', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('nom', 'Nom', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('ddn', 'Date de naissance', 'required|callback_check_majeur');
+        $this->form_validation->set_message('check_majeur', 'Vous devez être majeur pour créer un compte.');
+        
+    
+        // Ajoutez d'autres règles de validation ici selon vos besoins
+    
+        if ($this->form_validation->run() === FALSE) {
+            // Si la validation échoue, réaffichez le formulaire avec des erreurs
+            $this->load->view('register_view');
+        } else {
+            // Récupérer les données du formulaire
+            $data = array(
+                'login' => $this->input->post('login'),
+                'password' => md5($this->input->post('password')), // Utilisez un hachage sécurisé
+                'nom' => $this->input->post('nom'),
+                'prenom' => $this->input->post('prenom'),
+                'ddn' => $this->input->post('ddn'),
+                'email' => $this->input->post('email'),
+                'type_utilisateur' => 'client' // Par défaut, le type d'utilisateur est "client"
+            );
+    
+            // Vérifier si l'utilisateur est majeur
+            $is_majeur = $this->check_majeur($this->input->post('ddn'));
+    
+            if (!$is_majeur) {
+                // Si l'utilisateur n'est pas majeur, affichez un message d'erreur
+                $data['error_message'] = 'Vous devez être majeur pour créer un compte.';
+                $this->load->view('register_view', $data);
+            } else {
+                // Insérer l'utilisateur dans la base de données
+                $this->User_model->insert_user($data);
+    
+                // Rediriger vers une page de confirmation ou une autre page appropriée
+                redirect('login');
+            }
+        }
     }
+
+    public function check_majeur($date_naissance) {
+        // Logique de vérification de la majorité, par exemple :
+        $date_naissance_timestamp = strtotime($date_naissance);
+        $majorite_timestamp = strtotime('-18 years');
+        
+        return ($date_naissance_timestamp <= $majorite_timestamp);
+    }
+    
 
     public function delete_account() {
     

@@ -51,6 +51,8 @@
 
             <input type="submit" value="S'inscrire">
             <?php echo form_close(); ?>
+            
+
         </div>
     </section>
     <?php
