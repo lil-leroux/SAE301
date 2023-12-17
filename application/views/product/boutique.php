@@ -20,13 +20,29 @@
         <h2>Boutique</h2>
         <div class="main">
             <div class="filtre-pc">
+                <form method="GET" action="filtrer.php">
+                    <label for="categorie">Catégorie :</label>
+                    <select name="categorie" id="categorie">
+                        <option value="tous">Tous</option>
+                        <option value="vetements">Vêtements</option>
+                        <option value="electronique">Électronique</option>
+                        <!-- Ajoutez d'autres options selon vos catégories -->
+                    </select>
+
+                    <label for="prix_min">Prix minimum :</label>
+                    <input type="number" name="prix_min" id="prix_min" min="0">
+
+                    <label for="prix_max">Prix maximum :</label>
+                    <input type="number" name="prix_max" id="prix_max" min="0">
+
+                    <input type="submit" value="Filtrer">
+                </form>
             </div>
-            <div class="filtre-mobile"></div>
             <div class="products-container">
                 <?php foreach ($produits as $produit) { ?>
                     <div class="product-card">
                         <!-- <img src="<?php echo base_url('img/couleur.png'); ?>" alt="" srcset=""> -->
-                        <div class="border">
+                        
                             <div class="card">
                                 <!-- Structure pour chaque produit -->
                                 <div class="bloc">
@@ -96,7 +112,7 @@
                                     srcset="">
 
                             </div>
-                        </div>
+                        
                     </div>
                 <?php } ?>
             </div>
