@@ -35,14 +35,29 @@
                     <tbody>
                         <?php foreach ($users as $user) { ?>
                             <tr>
-                                <td><?php echo $user->id; ?></td>
-                                <td><?php echo $user->login; ?></td>
-                                <td><?php echo $user->nom; ?></td>
-                                <td><?php echo $user->prenom; ?></td>
-                                <td><?php echo $user->ddn; ?></td>
-                                <td><?php echo $user->email; ?></td>
-                                <td><?php echo $user->type_utilisateur; ?></td>
-                                <td><a href="<?php echo base_url('index.php/user/delete_user/' . $user->id); ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                                <td>
+                                    <?php echo $user->id; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->login; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->nom; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->prenom; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->ddn; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->email; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user->type_utilisateur; ?>
+                                </td>
+                                <td><a href="<?php echo base_url('index.php/user/delete_user/' . $user->id); ?>"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
                                         Supprimer</a></td>
                             </tr>
                         <?php } ?>

@@ -1,4 +1,3 @@
-<!-- application/views/register_view.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,11 +46,9 @@
 
 
 
-            <!-- Ajoutez d'autres champs de formulaire selon vos besoins -->
-
             <input type="submit" value="S'inscrire">
             <?php echo form_close(); ?>
-            
+
 
         </div>
     </section>

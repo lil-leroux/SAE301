@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('header');
     ?>
     <section class="connexion">
@@ -44,7 +44,7 @@
             <label for="nouveau_mdp">Nouveau mot de passe:</label>
             <input type="password" name="nouveau_mdp" value="<?php echo set_value('nouveau_mdp'); ?>" required>
             <br>
-            <!-- Add other form fields here -->
+
 
             <input type="submit" value="Update User">
 
@@ -52,7 +52,7 @@
         </div>
     </section>
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('footer');
     ?>
 </body>

@@ -16,7 +16,9 @@
     $this->load->view('header');
     ?>
     <section class="info_utilisateur">
-        <h2>Bienvenue, <?php echo $username; ?> !</h2>
+        <h2>Bienvenue,
+            <?php echo $username; ?> !
+        </h2>
         <div class="info">
 
 
@@ -31,7 +33,7 @@
         </div>
     </section>
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('carrousel');
     ?>
     <?php $this->load->view('footer'); ?>

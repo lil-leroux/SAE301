@@ -1,18 +1,21 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class User_model extends CI_Model
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->database();
 
     }
 
-    public function add_user() {
+    public function add_user()
+    {
         $data = array(
             'login' => $this->input->post('login'),
-            'password' => md5($this->input->post('password')), // Note: utiliser des méthodes de hachage sécurisées en production
+            'password' => md5($this->input->post('password')),
             'nom' => $this->input->post('nom'),
             'prenom' => $this->input->post('prenom'),
             'ddn' => $this->input->post('ddn'),
@@ -23,66 +26,72 @@ class User_model extends CI_Model {
         $this->db->insert('utilisateur', $data);
     }
 
-    public function get_users() {
-        // Récupérer la liste des utilisateurs depuis la base de données
+    public function get_users()
+    {
+
         $query = $this->db->get('utilisateur');
         return $query->result();
     }
 
-    public function delete_user($user_id) {
+    public function delete_user($user_id)
+    {
         $this->db->where('id', $user_id);
-     
+
         $this->db->delete('utilisateur');
         return $this->db->affected_rows() > 0;
     }
-    
 
 
-    public function check_login($login, $password) {
-        // Vérifier les informations d'identification dans la base de données
+
+    public function check_login($login, $password)
+    {
+
         $query = $this->db->get_where('utilisateur', array('login' => $login, 'password' => $password));
-        return $query->row(); // Retourne un objet utilisateur si les informations d'identification sont correctes, sinon NULL
+        return $query->row();
     }
 
-    // Ajoutez une méthode pour récupérer le type d'utilisateur (rôle) d'un utilisateur par son ID
-public function get_user_type($user_id) {
-    $query = $this->db->select('type_utilisateur')->get_where('utilisateur', array('id' => $user_id));
-    $result = $query->row();
-    return ($result) ? $result->type_utilisateur : null;
-}
-
-public function is_admin($user_id) {
-    $this->db->select('type_utilisateur');
-    $this->db->where('id', $user_id);
-    $query = $this->db->get('utilisateur');
-
-    if ($query->num_rows() > 0) {
-        $user = $query->row();
-        return $user->type_utilisateur === 'admin';
+    public function get_user_type($user_id)
+    {
+        $query = $this->db->select('type_utilisateur')->get_where('utilisateur', array('id' => $user_id));
+        $result = $query->row();
+        return ($result) ? $result->type_utilisateur : null;
     }
 
-    return false;
-}
+    public function is_admin($user_id)
+    {
+        $this->db->select('type_utilisateur');
+        $this->db->where('id', $user_id);
+        $query = $this->db->get('utilisateur');
 
-public function updateUser($login, $nouveau_nom, $nouveau_prenom, $nouvelle_ddn, $nouvel_email, $nouveau_mdp) {
-    $data = array(
-        'nom' => $nouveau_nom,
-        'prenom' => $nouveau_prenom,
-        'ddn' => $nouvelle_ddn,
-        'email' => $nouvel_email,
-        'password' => $nouveau_mdp
-    );
+        if ($query->num_rows() > 0) {
+            $user = $query->row();
+            return $user->type_utilisateur === 'admin';
+        }
 
-    $this->db->where('login', $login);
-    $this->db->update('utilisateur', $data);
+        return false;
+    }
 
-    return $this->db->affected_rows() > 0;
-}
+    public function updateUser($login, $nouveau_nom, $nouveau_prenom, $nouvelle_ddn, $nouvel_email, $nouveau_mdp)
+    {
+        $data = array(
+            'nom' => $nouveau_nom,
+            'prenom' => $nouveau_prenom,
+            'ddn' => $nouvelle_ddn,
+            'email' => $nouvel_email,
+            'password' => $nouveau_mdp
+        );
 
-public function insert_user($data) {
-    // Insérer l'utilisateur dans la table "utilisateur"
-    $this->db->insert('utilisateur', $data);
-}
+        $this->db->where('login', $login);
+        $this->db->update('utilisateur', $data);
+
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function insert_user($data)
+    {
+
+        $this->db->insert('utilisateur', $data);
+    }
 
 
 }
