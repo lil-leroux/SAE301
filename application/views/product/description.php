@@ -52,6 +52,12 @@
             <label for="endDate">Date de fin</label>
             <input type="text" class="form-control" id="endDate" value="">
         </div>
+        <form method="POST" action="<?php echo base_url('index.php/MesReservations/reserverLoc'); ?>">
+                    <input type="hidden" id="startDateHidden" name="startDateHidden" value="">
+                    <input type="hidden" id="endDateHidden" name="endDateHidden" value="">
+                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                    <button type="submit">Réserver</button>
+                </form>
         
         <!-- Affichage d'autres détails du produit selon les besoins -->
     </div>
@@ -70,11 +76,13 @@
 <script>
 $(function() {
     $('input[name="daterange"]').daterangepicker({}, function(start, end, label) {
-        // Mettez à jour la valeur de #startDate avec la date de début
+        // transfére la date de début
         $('#startDate').val(start.format('YYYY-MM-DD'));
-        // Mettez à jour la valeur de #endDate avec la date de fin
+        //transfére la date de fin 
         $('#endDate').val(end.format('YYYY-MM-DD'));
-
+        // transfère des date dans le form
+        $('#startDateHidden').val(start.format('YYYY-MM-DD'));
+                $('#endDateHidden').val(end.format('YYYY-MM-DD'));
         // Affichez également dans la console pour vérification
         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
     });

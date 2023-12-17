@@ -1,5 +1,3 @@
-<!-- Login Form View (application/views/login/login_form.php) -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,7 @@
 
 <body>
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('header');
     ?>
 
@@ -30,7 +28,9 @@
             <?php echo validation_errors(); ?>
 
             <?php if (isset($error)) { ?>
-                <p style="color: red;"><?php echo $error; ?></p>
+                <p style="color: red;">
+                    <?php echo $error; ?>
+                </p>
             <?php } ?>
 
             <?php echo form_open('login/process_login'); ?>
@@ -47,7 +47,7 @@
         </div>
     </section>
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('footer');
     ?>
 </body>
