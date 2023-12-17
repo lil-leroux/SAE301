@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>
-        <?php echo $content; ?> - CodeIgniter 3 Tutorial
+        <?php echo $content; ?> - Dicathlon
     </title>
     <link rel="icon" type="image/png" href="<?php echo base_url('img/Rectangle 367.png'); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">

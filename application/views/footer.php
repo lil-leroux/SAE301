@@ -19,7 +19,7 @@
 
             <div class="footer_col1">
                 <div class="footer_titre footer_align">Lien rapide</div>
-                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php'); ?>">Acceuil</a></div>
+                <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php'); ?>">Accueil</a></div>
                 <div class="footer_align"><a class="lien_footer" href="<?php echo base_url('index.php/product/boutique'); ?>">Boutique</a></div>
             </div>
 
