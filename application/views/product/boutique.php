@@ -111,6 +111,15 @@
                                 <img id="fonction-card-quatre" src="<?php echo base_url('img/avis.png'); ?>" alt=""
                                     srcset="">
 
+                        <div class="card">
+                            <!-- Structure pour chaque produit -->
+                            <div class="bloc">
+                                <p>
+                                    <?php echo $produit->type; ?>
+                                </p>
+                                <p>
+                                    <?php echo $produit->description; ?>
+                                </p>
                             </div>
                         
                     </div>

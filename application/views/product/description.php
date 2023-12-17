@@ -1,5 +1,3 @@
-<!-- description.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,24 +14,23 @@
 </head>
 
 <body>
-    
+
     <?php
-    $product_id= $_GET['id'];
-    // Chargez la barre de navigation
+    $product_id = $_GET['id'];
+
     $this->load->view('header');
     ?>
 
     <section>
         <?php
-        // Récupérer l'id du produit à partir des paramètres de requête
+
         $product_id = $this->input->get('id');
 
-        // Utilisez l'id pour récupérer les détails du produit depuis la base de données en utilisant le modèle Product_model
         $produit_details = $this->Product_model->getProduitById($product_id);
 
-        // Vérifiez si les détails du produit existent
+
         if ($produit_details) {
-        ?>
+            ?>
             <h2>Description du Produit</h2>
             <div class="container">
         <h2><?php echo $produit['type']; ?></h2>
@@ -63,14 +60,14 @@
     </div>
         <?php
         } else {
-            // Affichez un message si le produit n'est pas trouvé
+
             echo "<p>Produit non trouvé.</p>";
         }
         ?>
     </section>
 
     <?php
-    // Chargez la barre de navigation
+
     $this->load->view('footer');
     ?>
 <script>
